@@ -1,0 +1,12 @@
+# 开发配置
+server:
+  port: 80
+spring:
+  datasource:
+#    修改数据库
+    url: jdbc:mysql://rm-uf60907gller211q60o.mysql.rds.aliyuncs.com:3306/public-dev?serverTimezone=GMT%2B8
+    username: puser
+    password: nuist2333
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  thymeleaf:
+    suffix: .html

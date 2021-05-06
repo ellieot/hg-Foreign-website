@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 24px;
+  }
+}
+header {
+  position: fixed;
+  height: 7vh;
+  width: 100%;
+  background: linear-gradient(to right, #94ffff, #6a68ff);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 999;
+}
+header .logo {
+  position: relative;
+  height: 2.8125rem;
+  left: -2.8333333333rem;
+}
+header ul {
+  position: relative;
+  width: 35vw;
+  height: 100%;
+  left: 5.3333333333rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  user-select: none;
+}
+header ul li {
+  display: flex;
+  width: 6.7708333333rem;
+  line-height: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+header ul li:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+.mainContent {
+  position: relative;
+  height: 135vh;
+}
+.mainContent .slideShow {
+  position: relative;
+  height: 93vh;
+}
+
+footer {
+  position: relative;
+  background-color: #56c1c6;
+  height: 10vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
