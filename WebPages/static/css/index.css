@@ -4,6 +4,10 @@
   list-style: none;
 }
 
+html {
+  overflow: hidden;
+}
+
 @media screen and (max-width: 768px) {
   html {
     font-size: 24px;
@@ -52,12 +56,17 @@ header ul li:hover {
 
 .mainContent {
   position: relative;
-  height: 135vh;
+  top: 7vh;
+  height: 455vh;
+}
+.mainContent .description,
+.mainContent .productList,
+.mainContent .service,
+.mainContent .applications {
+  position: relative;
+  height: 93vh;
 }
 .mainContent .description {
-  position: relative;
-  top: 7vh;
-  height: 93vh;
   background-color: #6a68ff;
   color: #dcfff3;
 }
@@ -92,11 +101,26 @@ header ul li:hover {
 .mainContent .description .scrollTip .arrow {
   font-size: 1.3333333333rem;
 }
+.mainContent .productList {
+  background-color: aqua;
+}
+.mainContent .service {
+  background-color: #8e00b9;
+}
+.mainContent .applications {
+  background-color: #0c00ad;
+}
+.mainContent .contact {
+  position: relative;
+  height: 83vh;
+  background-color: #0ead00;
+}
 
 footer {
   position: relative;
   background-color: #56c1c6;
   height: 10vh;
+  top: 7vh;
   color: white;
   display: flex;
   justify-content: center;

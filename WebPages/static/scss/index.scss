@@ -4,6 +4,10 @@
 	list-style: none;
 }
 
+html {
+	overflow: hidden;
+}
+
 @media screen and (max-width: 768px) {
 	html {
 		font-size: 24px;
@@ -61,12 +65,18 @@ header {
 
 .mainContent {
 	position: relative;
-	height: 135vh;
+	top: 7vh;
+	height: 455vh;
+
+	.description,
+	.productList,
+	.service,
+	.applications {
+		position: relative;
+		height: 93vh;
+	}
 
 	.description {
-		position: relative;
-		top: 7vh;
-		height: 93vh;
 		background-color: #6a68ff;
 		color: rgb(220, 255, 243);
 
@@ -107,12 +117,31 @@ header {
 			}
 		}
 	}
+
+	.productList {
+		background-color: aqua;
+	}
+
+	.service {
+		background-color: #8e00b9;
+	}
+
+	.applications {
+		background-color: #0c00ad;
+	}
+
+	.contact {
+		position: relative;
+		height: 83vh;
+		background-color: #0ead00;
+	}
 }
 
 footer {
 	position: relative;
 	background-color: rgb(86, 193, 198);
 	height: 10vh;
+	top: 7vh;
 	color: white;
 	display: flex;
 	justify-content: center;
