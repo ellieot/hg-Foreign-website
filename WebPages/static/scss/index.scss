@@ -1,0 +1,253 @@
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+html {
+	overflow: hidden;
+}
+
+@function px2rem($px) {
+	@return #{$px / 48}rem;
+}
+
+header {
+	position: fixed;
+	height: 7vh;
+	width: 100%;
+	background: linear-gradient(to right, #94ffff, #6a68ff);
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	z-index: 999;
+
+	.logo {
+		position: relative;
+		height: px2rem(135);
+		left: px2rem(-136);
+	}
+
+	.unfoldButton {
+		display: none;
+		position: relative;
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-items: center;
+		height: 5vh;
+		width: 5vh;
+		left: px2rem(54);
+		border-radius: px2rem(8);
+		border-width: px2rem(4);
+		border-style: solid;
+		border-color: white;
+
+		div {
+			width: 3.8vh;
+			height: 0.5vh;
+			background-color: white;
+		}
+	}
+
+	ul {
+		position: relative;
+		left: px2rem(256);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		justify-content: center;
+		color: white;
+		user-select: none;
+
+		li {
+			display: flex;
+			width: px2rem(350);
+			line-height: 100%;
+			height: 7vh;
+			align-items: center;
+			justify-content: center;
+
+			&:hover {
+				background-color: white;
+				color: black;
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+.mainContent {
+	position: relative;
+	top: 7vh;
+	height: 455vh;
+
+	.description,
+	.productList,
+	.service,
+	.applications {
+		position: relative;
+		height: 93vh;
+	}
+
+	.description {
+		background-color: #6a68ff;
+		color: rgb(220, 255, 243);
+
+		.focus {
+			position: absolute;
+			left: 6vw;
+			top: 25vh;
+			font-size: px2rem(100);
+
+			.title {
+				margin-bottom: 5vh;
+				font-size: px2rem(120);
+			}
+		}
+
+		.mainTitle {
+			position: absolute;
+			left: 42vw;
+			top: 35vh;
+			font-size: px2rem(180);
+		}
+
+		.scrollTip {
+			position: absolute;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			bottom: 1vh;
+			left: 38vw;
+
+			.text {
+				font-size: px2rem(80);
+			}
+
+			.arrow {
+				font-size: px2rem(64);
+			}
+		}
+	}
+
+	.productList {
+		background-color: aqua;
+	}
+
+	.service {
+		background-color: #8e00b9;
+	}
+
+	.applications {
+		background-color: #0c00ad;
+	}
+
+	.contact {
+		position: relative;
+		height: 83vh;
+		background-color: #0ead00;
+	}
+}
+
+footer {
+	position: relative;
+	background-color: rgb(86, 193, 198);
+	height: 10vh;
+	top: 7vh;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+	html {
+		font-size: 24px;
+	}
+
+	header {
+		.logo {
+			position: relative;
+			height: px2rem(100);
+			left: px2rem(-64);
+		}
+
+		.unfoldButton {
+			display: flex;
+		}
+
+		ul {
+			position: absolute;
+			background-color: rgba(0, 68, 255, 0.65);
+			top: 7vh;
+			left: 0;
+			width: 100%;
+			display: none;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+
+			li {
+				width: 100%;
+			}
+		}
+	}
+
+	.mainContent {
+		.description {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			background-color: #6a68ff;
+			color: rgb(220, 255, 243);
+
+			.focus {
+				position: relative;
+				left: 0;
+				top: 0;
+
+				.title {
+					position: relative;
+					margin-bottom: 1vh;
+					left: 1.5vw;
+					font-size: px2rem(85);
+				}
+
+				ul {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					font-size: px2rem(64);
+				}
+			}
+
+			.mainTitle {
+				position: relative;
+				left: 0;
+				top: -12vh;
+				font-size: px2rem(120);
+			}
+
+			.scrollTip {
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				left: 0;
+				top: 24vh;
+
+				.text {
+					font-size: px2rem(45);
+				}
+
+				.arrow {
+					font-size: px2rem(32);
+				}
+			}
+		}
+	}
+}

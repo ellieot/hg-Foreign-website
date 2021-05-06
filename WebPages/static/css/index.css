@@ -1,0 +1,217 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+html {
+  overflow: hidden;
+}
+
+header {
+  position: fixed;
+  height: 7vh;
+  width: 100%;
+  background: linear-gradient(to right, #94ffff, #6a68ff);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 999;
+}
+header .logo {
+  position: relative;
+  height: 2.8125rem;
+  left: -2.8333333333rem;
+}
+header .unfoldButton {
+  display: none;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 5vh;
+  width: 5vh;
+  left: 1.125rem;
+  border-radius: 0.1666666667rem;
+  border-width: 0.0833333333rem;
+  border-style: solid;
+  border-color: white;
+}
+header .unfoldButton div {
+  width: 3.8vh;
+  height: 0.5vh;
+  background-color: white;
+}
+header ul {
+  position: relative;
+  left: 5.3333333333rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  user-select: none;
+}
+header ul li {
+  display: flex;
+  width: 7.2916666667rem;
+  line-height: 100%;
+  height: 7vh;
+  align-items: center;
+  justify-content: center;
+}
+header ul li:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+.mainContent {
+  position: relative;
+  top: 7vh;
+  height: 455vh;
+}
+.mainContent .description,
+.mainContent .productList,
+.mainContent .service,
+.mainContent .applications {
+  position: relative;
+  height: 93vh;
+}
+.mainContent .description {
+  background-color: #6a68ff;
+  color: #dcfff3;
+}
+.mainContent .description .focus {
+  position: absolute;
+  left: 6vw;
+  top: 25vh;
+  font-size: 2.0833333333rem;
+}
+.mainContent .description .focus .title {
+  margin-bottom: 5vh;
+  font-size: 2.5rem;
+}
+.mainContent .description .mainTitle {
+  position: absolute;
+  left: 42vw;
+  top: 35vh;
+  font-size: 3.75rem;
+}
+.mainContent .description .scrollTip {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  bottom: 1vh;
+  left: 38vw;
+}
+.mainContent .description .scrollTip .text {
+  font-size: 1.6666666667rem;
+}
+.mainContent .description .scrollTip .arrow {
+  font-size: 1.3333333333rem;
+}
+.mainContent .productList {
+  background-color: aqua;
+}
+.mainContent .service {
+  background-color: #8e00b9;
+}
+.mainContent .applications {
+  background-color: #0c00ad;
+}
+.mainContent .contact {
+  position: relative;
+  height: 83vh;
+  background-color: #0ead00;
+}
+
+footer {
+  position: relative;
+  background-color: #56c1c6;
+  height: 10vh;
+  top: 7vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 24px;
+  }
+
+  header .logo {
+    position: relative;
+    height: 2.0833333333rem;
+    left: -1.3333333333rem;
+  }
+  header .unfoldButton {
+    display: flex;
+  }
+  header ul {
+    position: absolute;
+    background-color: rgba(0, 68, 255, 0.65);
+    top: 7vh;
+    left: 0;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  header ul li {
+    width: 100%;
+  }
+
+  .mainContent .description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #6a68ff;
+    color: #dcfff3;
+  }
+  .mainContent .description .focus {
+    position: relative;
+    left: 0;
+    top: 0;
+  }
+  .mainContent .description .focus .title {
+    position: relative;
+    margin-bottom: 1vh;
+    left: 1.5vw;
+    font-size: 1.7708333333rem;
+  }
+  .mainContent .description .focus ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3333333333rem;
+  }
+  .mainContent .description .mainTitle {
+    position: relative;
+    left: 0;
+    top: -12vh;
+    font-size: 2.5rem;
+  }
+  .mainContent .description .scrollTip {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    top: 24vh;
+  }
+  .mainContent .description .scrollTip .text {
+    font-size: 0.9375rem;
+  }
+  .mainContent .description .scrollTip .arrow {
+    font-size: 0.6666666667rem;
+  }
+}
