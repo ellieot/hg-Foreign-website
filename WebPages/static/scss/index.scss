@@ -63,10 +63,49 @@ header {
 	position: relative;
 	height: 135vh;
 
-	.slideShow {
+	.description {
 		position: relative;
+		top: 7vh;
 		height: 93vh;
+		background-color: #6a68ff;
+		color: rgb(220, 255, 243);
 
+		.focus {
+			position: absolute;
+			left: 6vw;
+			top: 25vh;
+			font-size: px2rem(100);
+
+			.title {
+				margin-bottom: 5vh;
+				font-size: px2rem(120);
+			}
+		}
+
+		.mainTitle {
+			position: absolute;
+			left: 42vw;
+			top: 35vh;
+			font-size: px2rem(180);
+		}
+
+		.scrollTip {
+			position: absolute;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			bottom: 1vh;
+			left: 38vw;
+
+			.text {
+				font-size: px2rem(80);
+			}
+
+			.arrow {
+				font-size: px2rem(64);
+			}
+		}
 	}
 }
 

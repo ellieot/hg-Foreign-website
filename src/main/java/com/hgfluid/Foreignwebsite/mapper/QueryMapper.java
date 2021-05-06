@@ -8,11 +8,11 @@ import org.springframework.stereotype.Component;
 
 @Component
 public interface QueryMapper {
+
     @Insert("INSERT INTO query values(null,#{name},#{mail},#{demand})")
     int insertQuery(@Param("name") String name, @Param("mail") String mail, @Param("demand") String demand);
 
     @Select("SELECT * FROM query")
     QueryEntity selectAll();
-
 
 }

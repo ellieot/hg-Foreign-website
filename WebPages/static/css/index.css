@@ -54,9 +54,43 @@ header ul li:hover {
   position: relative;
   height: 135vh;
 }
-.mainContent .slideShow {
+.mainContent .description {
   position: relative;
+  top: 7vh;
   height: 93vh;
+  background-color: #6a68ff;
+  color: #dcfff3;
+}
+.mainContent .description .focus {
+  position: absolute;
+  left: 6vw;
+  top: 25vh;
+  font-size: 2.0833333333rem;
+}
+.mainContent .description .focus .title {
+  margin-bottom: 5vh;
+  font-size: 2.5rem;
+}
+.mainContent .description .mainTitle {
+  position: absolute;
+  left: 42vw;
+  top: 35vh;
+  font-size: 3.75rem;
+}
+.mainContent .description .scrollTip {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  bottom: 1vh;
+  left: 38vw;
+}
+.mainContent .description .scrollTip .text {
+  font-size: 1.6666666667rem;
+}
+.mainContent .description .scrollTip .arrow {
+  font-size: 1.3333333333rem;
 }
 
 footer {

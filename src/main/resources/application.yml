@@ -1,12 +1,25 @@
-# 开发配置
+#开发配置
 server:
   port: 80
+
 spring:
   datasource:
-#    修改数据库
+#修改数据库
     url: jdbc:mysql://rm-uf60907gller211q60o.mysql.rds.aliyuncs.com:3306/public-dev?serverTimezone=GMT%2B8
     username: puser
     password: nuist2333
     driver-class-name: com.mysql.cj.jdbc.Driver
+#邮件账户配置
+  mail:
+    host: smtp.yeah.net
+    username: swsk33_dev@yeah.net
+    password: OVIXXPNNKREVQOII
+    default-encoding: UTF-8
+#资源文件配置
+  resources:
+    static-locations: classpath:/static,classpath:/public,classpath:/resources,classpath:/META-INF/resources,file:WebPages/static
+#Thymeleaf配置
   thymeleaf:
+    prefix: file:WebPages/templates/
     suffix: .html
+    cache: false

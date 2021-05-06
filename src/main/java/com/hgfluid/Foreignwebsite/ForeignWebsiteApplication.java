@@ -11,4 +11,5 @@ public class ForeignWebsiteApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ForeignWebsiteApplication.class, args);
 	}
+
 }
