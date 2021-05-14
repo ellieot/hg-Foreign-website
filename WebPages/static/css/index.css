@@ -141,6 +141,7 @@ header ul li:hover {
 .mainContent .contact .submitInfo .title {
   position: relative;
   font-size: 1.6666666667rem;
+  text-align: center;
   color: white;
   text-shadow: black 1px 2px 1px;
   margin-top: 8vh;
@@ -151,7 +152,6 @@ header ul li:hover {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  width: 75%;
   height: 50vh;
   margin-top: 5vh;
 }
@@ -197,7 +197,7 @@ header ul li:hover {
 }
 .mainContent .contact .submitInfo .button {
   position: relative;
-  top: 3vh;
+  top: 1vh;
   line-height: 2.8125rem;
   height: 2.8125rem;
   width: 16.6666666667rem;
@@ -213,6 +213,11 @@ header ul li:hover {
 .mainContent .contact .submitInfo .button:hover {
   background-color: #49bcff;
   cursor: pointer;
+}
+.mainContent .contact .submitInfo .requestTip {
+  display: none;
+  position: relative;
+  top: 18px;
 }
 
 footer {
@@ -300,5 +305,52 @@ footer {
   }
   .mainContent .description .scrollTip .arrow {
     font-size: 0.6666666667rem;
+  }
+  .mainContent .contact .submitInfo .title {
+    margin-top: 2.5vh;
+    font-size: 1rem;
+  }
+  .mainContent .contact .submitInfo form {
+    position: relative;
+    display: flex;
+    height: 50vh;
+    margin-top: 3vh;
+  }
+  .mainContent .contact .submitInfo form div .errorTip {
+    display: none;
+    font-size: 0.6666666667rem;
+    color: red;
+  }
+  .mainContent .contact .submitInfo form input,
+.mainContent .contact .submitInfo form textarea {
+    width: 10.4166666667rem;
+    height: 1.5625rem;
+    line-height: 1.5625rem;
+  }
+  .mainContent .contact .submitInfo form input:focus,
+.mainContent .contact .submitInfo form textarea:focus {
+    width: 14.5833333333rem;
+  }
+  .mainContent .contact .submitInfo form input {
+    font-size: 1rem;
+  }
+  .mainContent .contact .submitInfo form textarea {
+    height: 7.5rem;
+    line-height: 1rem;
+    font-size: 0.75rem;
+  }
+  .mainContent .contact .submitInfo .button {
+    top: 0;
+    line-height: 1.875rem;
+    height: 1.875rem;
+    width: 13.5416666667rem;
+    font-size: 1rem;
+  }
+  .mainContent .contact .submitInfo .button:active {
+    color: #0093E9;
+  }
+  .mainContent .contact .submitInfo .requestTip {
+    top: 16px;
+    font-size: 0.75rem;
   }
 }

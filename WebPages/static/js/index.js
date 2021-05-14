@@ -137,6 +137,10 @@ submitButton.addEventListener('click', (e) => {
 			demand: demand
 		}
 		let data = JSON.stringify(userInfo);
+		let tip = document.querySelector('.mainContent .contact .submitInfo .requestTip');
+		tip.style.display = 'block';
+		tip.style.color = '#8e00b9';
+		tip.innerHTML = 'sending request...';
 		fetch('/submit', {
 			method: 'POST',
 			body: data,
@@ -144,7 +148,16 @@ submitButton.addEventListener('click', (e) => {
 				'Content-Type': 'application/json'
 			})
 		}).then(result => result.json()).then(response => {
-			console.log(response);
+			if (response.success) {
+				tip.innerHTML = 'Success!'
+				tip.style.color = '#016e41';
+				setTimeout(() => {
+					tip.style.display = 'none';
+				}, 3000);
+			} else {
+				tip.innerHTML = 'Failed! Please check your network!'
+				tip.style.color = 'red';
+			}
 		});
 	}
 });
