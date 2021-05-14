@@ -8,7 +8,7 @@ import lombok.ToString;
 /**
  * 结果类
  * 
- * @author D-37
+ * @author swsk33
  *
  */
 @Getter
