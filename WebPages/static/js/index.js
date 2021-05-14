@@ -1,6 +1,31 @@
 let currentIndex = 0; //当前页面索引
 let ableToScroll = true; //当前是否允许滑动
 let menuBar = document.querySelector('header ul'); //上栏按钮
+let verificationCode; //验证码
+let ableToGetCode = true; //当前是否可以获取验证码
+
+/**
+ * 获取验证码
+ */
+function getVerificationCode() {
+	if (ableToGetCode) {
+		fetch('/getcode').then(result => result.json()).then(response => {
+			if (response.success) {
+				verificationCode = response.data;
+				document.querySelector('.mainContent .contact .submitInfo form .code .mainInput .showCode').innerHTML = verificationCode;
+				ableToGetCode = false;
+				setTimeout(() => {
+					ableToGetCode = true;
+				}, 1000);
+			}
+		});
+	}
+}
+//添加点击验证码更换的事件
+document.querySelector('.mainContent .contact .submitInfo form .code .mainInput .showCode').addEventListener('click', (e) => {
+	e.stopPropagation;
+	getVerificationCode();
+});
 
 /**
  * 滑动页面
@@ -117,7 +142,7 @@ let submitForm = document.querySelector('.mainContent .contact .submitInfo form'
 submitButton.addEventListener('click', (e) => {
 	e.stopPropagation();
 	let existEmpty = false;
-	for (let i = 0; i < submitForm.length; i++) {
+	for (let i = 0; i < 3; i++) { //检测表单是否为空
 		if (submitForm[i].children[0].value === '') {
 			submitForm[i].children[0].style.borderColor = 'red';
 			submitForm[i].children[1].style.display = 'block';
@@ -127,6 +152,22 @@ submitButton.addEventListener('click', (e) => {
 			submitForm[i].children[1].style.display = 'none';
 		}
 	}
+	//对比验证码
+	let codeComponents = submitForm[3].children;
+	if (codeComponents[0].children[1].value === '') {
+		codeComponents[0].children[1].style.borderColor = 'red';
+		codeComponents[1].style.display = 'block';
+		codeComponents[1].innerHTML = 'Verification code should not be empty!';
+		return;
+	}
+	if (codeComponents[0].children[1].value != verificationCode) {
+		codeComponents[0].children[1].style.borderColor = 'red';
+		codeComponents[1].style.display = 'block';
+		codeComponents[1].innerHTML = 'Verification code error!';
+		return;
+	}
+	codeComponents[0].children[1].style.borderColor = 'rgba(255, 255, 255, 0.45)';
+	codeComponents[1].style.display = 'none';
 	if (!existEmpty) {
 		let name = submitForm[0].children[0].value;
 		let email = submitForm[1].children[0].value;
@@ -161,3 +202,5 @@ submitButton.addEventListener('click', (e) => {
 		});
 	}
 });
+
+getVerificationCode();

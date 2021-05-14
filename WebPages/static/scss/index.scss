@@ -166,7 +166,7 @@ header {
 				text-align: center;
 				color: white;
 				text-shadow: black 1px 2px 1px;
-				margin-top: 8vh;
+				margin-top: 6vh;
 			}
 
 			form {
@@ -222,6 +222,47 @@ header {
 					height: px2rem(420);
 					line-height: px2rem(64);
 					font-size: px2rem(48);
+				}
+
+				.code {
+					width: px2rem(1500);
+
+					.mainInput {
+						display: flex;
+						justify-content: flex-start;
+						align-items: center;
+
+						.showCode {
+							width: px2rem(200);
+							height: px2rem(100);
+							line-height: px2rem(100);
+							font-size: px2rem(60);
+							text-decoration: line-through;
+							text-align: center;
+							background-color: #6a68ff;
+							color: white;
+							border-top-left-radius: 5px;
+							border-bottom-left-radius: 5px;
+							user-select: none;
+
+							&:hover {
+								cursor: pointer;
+							}
+						}
+
+						input {
+							width: px2rem(300);
+							height: px2rem(100);
+							line-height: px2rem(100);
+							border-top-left-radius: 0;
+							border-bottom-left-radius: 0;
+							transition: width 0.5s;
+
+							&:focus {
+								width: px2rem(450);
+							}
+						}
+					}
 				}
 			}
 
@@ -370,8 +411,8 @@ footer {
 
 					div {
 						.errorTip {
-							display: none;
-							font-size: px2rem(32);
+							font-size: px2rem(28);
+							line-height: px2rem(28);
 							color: red;
 						}
 					}
@@ -396,13 +437,51 @@ footer {
 						line-height: px2rem(48);
 						font-size: px2rem(36);
 					}
+
+					.code {
+						position: relative;
+						width: px2rem(500);
+						top: 6px;
+
+						.mainInput {
+							display: flex;
+							justify-content: flex-start;
+							align-items: center;
+
+							.showCode {
+								width: px2rem(100);
+								height: px2rem(60);
+								line-height: px2rem(60);
+								font-size: px2rem(36);
+								text-decoration: line-through;
+								text-align: center;
+								background-color: #6a68ff;
+								color: white;
+								border-top-left-radius: 5px;
+								border-bottom-left-radius: 5px;
+							}
+
+							input {
+								width: px2rem(200);
+								height: px2rem(60);
+								line-height: px2rem(60);
+								border-top-left-radius: 0;
+								border-bottom-left-radius: 0;
+								transition: width 0.5s;
+
+								&:focus {
+									width: px2rem(300);
+								}
+							}
+						}
+					}
 				}
 
 				.button {
-					top: 0;
+					top: 24px;
 					line-height: px2rem(90);
 					height: px2rem(90);
-					width: px2rem(650);
+					width: px2rem(500);
 					font-size: px2rem(48);
 
 					&:active {
@@ -411,7 +490,7 @@ footer {
 				}
 
 				.requestTip {
-					top: 16px;
+					top: 24px;
 					font-size: px2rem(36);
 				}
 			}
