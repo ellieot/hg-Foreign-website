@@ -131,5 +131,20 @@ submitButton.addEventListener('click', (e) => {
 		let name = submitForm[0].children[0].value;
 		let email = submitForm[1].children[0].value;
 		let demand = submitForm[2].children[0].value;
+		let userInfo = {
+			name: name,
+			mail: email,
+			demand: demand
+		}
+		let data = JSON.stringify(userInfo);
+		fetch('/submit', {
+			method: 'POST',
+			body: data,
+			headers: new Headers({
+				'Content-Type': 'application/json'
+			})
+		}).then(result => result.json()).then(response => {
+			console.log(response);
+		});
 	}
 });
