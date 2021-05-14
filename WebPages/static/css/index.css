@@ -155,64 +155,64 @@ header ul li:hover {
   height: 50vh;
   margin-top: 5vh;
 }
-.mainContent .contact .submitInfo form div {
-  position: relative;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  color: white;
-  font-size: 1.2083333333rem;
+.mainContent .contact .submitInfo form div .errorTip {
+  display: none;
+  font-size: 1rem;
+  color: red;
 }
-.mainContent .contact .submitInfo form div .text {
+.mainContent .contact .submitInfo form input,
+.mainContent .contact .submitInfo form textarea {
   position: relative;
-  display: block;
-  width: 6.6666666667rem;
-  height: 2.2916666667rem;
-  line-height: 2.2916666667rem;
-  text-align: center;
-  background-color: #2494fd;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  text-shadow: black 0.3px 2px 2px;
-}
-.mainContent .contact .submitInfo form div input,
-.mainContent .contact .submitInfo form div textarea {
-  position: relative;
-  width: 35.4166666667rem;
-  height: 2.2916666667rem;
-  font-size: 0.9375rem;
+  width: 31.25rem;
+  height: 2.7083333333rem;
+  line-height: 2.7083333333rem;
   outline: none;
-  border: none;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border: rgba(255, 255, 255, 0.45) 1px solid;
+  border-radius: 5px;
   box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.25);
+  transition: width 0.5s;
 }
-.mainContent .contact .submitInfo form div input:focus,
-.mainContent .contact .submitInfo form div textarea:focus {
-  border-color: #0051ff;
-  border-width: 0.1041666667rem;
+.mainContent .contact .submitInfo form input:hover,
+.mainContent .contact .submitInfo form textarea:hover {
+  background-color: rgba(255, 255, 255, 0.45);
+}
+.mainContent .contact .submitInfo form input:focus,
+.mainContent .contact .submitInfo form textarea:focus {
+  width: 36.4583333333rem;
+  background-color: white;
+  border-color: white;
+  border-width: 1.5px;
   border-style: solid;
 }
-.mainContent .contact .submitInfo form .demand .text {
-  height: 8.75rem;
-  line-height: 8.75rem;
+.mainContent .contact .submitInfo form input {
+  text-align: center;
+  font-size: 1.1666666667rem;
 }
-.mainContent .contact .submitInfo form .demand textarea {
+.mainContent .contact .submitInfo form textarea {
   resize: none;
   height: 8.75rem;
+  line-height: 1.3333333333rem;
+  font-size: 1rem;
 }
 .mainContent .contact .submitInfo .button {
   position: relative;
-  top: 5vh;
-  height: 2.5rem;
-  width: 20.8333333333rem;
+  top: 3vh;
+  line-height: 2.8125rem;
+  height: 2.8125rem;
+  width: 16.6666666667rem;
   font-size: 1.2083333333rem;
   background-color: #0093E9;
   border-radius: 5px;
   color: white;
-  line-height: 2.5rem;
   text-align: center;
   user-select: none;
+  text-shadow: black 1px 1px 2px;
+  transition: background-color 0.7s;
+}
+.mainContent .contact .submitInfo .button:hover {
+  background-color: #49bcff;
+  cursor: pointer;
 }
 
 footer {

@@ -80,6 +80,7 @@ document.querySelector('header .logo').addEventListener('click', (e) => {
 	moveToPage(0, 100);
 });
 
+//手机端附加事件
 if (window.innerWidth < 768) {
 	//手机端展开按钮
 	let isMenuOpen = false;
@@ -109,3 +110,26 @@ if (window.innerWidth < 768) {
 		scrollPage(endY - startY > 0, 500);
 	});
 }
+
+//提交按钮
+let submitButton = document.querySelector('.mainContent .contact .submitInfo .button');
+let submitForm = document.querySelector('.mainContent .contact .submitInfo form').children;
+submitButton.addEventListener('click', (e) => {
+	e.stopPropagation();
+	let existEmpty = false;
+	for (let i = 0; i < submitForm.length; i++) {
+		if (submitForm[i].children[0].value === '') {
+			submitForm[i].children[0].style.borderColor = 'red';
+			submitForm[i].children[1].style.display = 'block';
+			existEmpty = true;
+		} else {
+			submitForm[i].children[0].style.borderColor = 'rgba(255, 255, 255, 0.45)';
+			submitForm[i].children[1].style.display = 'none';
+		}
+	}
+	if (!existEmpty) {
+		let name = submitForm[0].children[0].value;
+		let email = submitForm[1].children[0].value;
+		let demand = submitForm[2].children[0].value;
+	}
+});
