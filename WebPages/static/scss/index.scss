@@ -151,7 +151,102 @@ header {
 	.contact {
 		position: relative;
 		height: 83vh;
-		background-color: #0ead00;
+		background-color: #8EC5FC;
+		background-image: linear-gradient(45deg, #8EC5FC 32%, #d8c3fc 100%);
+
+		.submitInfo {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: center;
+
+			.title {
+				position: relative;
+				font-size: px2rem(80);
+				color: white;
+				text-shadow: black 1px 2px 1px;
+				margin-top: 8vh;
+			}
+
+			form {
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-evenly;
+				align-items: center;
+				width: 75%;
+				height: 50vh;
+				margin-top: 5vh;
+
+				div {
+					position: relative;
+					display: flex;
+					justify-content: flex-start;
+					align-items: center;
+					color: white;
+					font-size: px2rem(58);
+
+					.text {
+						position: relative;
+						display: block;
+						width: px2rem(320);
+						height: px2rem(110);
+						line-height: px2rem(110);
+						text-align: center;
+						background-color: #2494fd;
+						border-top-left-radius: 5px;
+						border-bottom-left-radius: 5px;
+						text-shadow: black 0.3px 2px 2px;
+					}
+
+					input,
+					textarea {
+						position: relative;
+						width: px2rem(1700);
+						height: px2rem(110);
+						font-size: px2rem(45);
+						outline: none;
+						border: none;
+						border-top-right-radius: 5px;
+						border-bottom-right-radius: 5px;
+						box-sizing: border-box;
+
+						&:focus {
+							border-color: rgb(0, 81, 255);
+							border-width: px2rem(5);
+							border-style: solid;
+						}
+					}
+
+				}
+
+				.demand {
+					.text {
+						height: px2rem(420);
+						line-height: px2rem(420);
+					}
+
+					textarea {
+						resize: none;
+						height: px2rem(420);
+					}
+				}
+			}
+
+			.button {
+				position: relative;
+				top: 5vh;
+				height: px2rem(120);
+				width: px2rem(1000);
+				font-size: px2rem(58);
+				background-color: #0093E9;
+				border-radius: 5px;
+				color: white;
+				line-height: px2rem(120);
+				text-align: center;
+				user-select: none;
+			}
+		}
 	}
 }
 

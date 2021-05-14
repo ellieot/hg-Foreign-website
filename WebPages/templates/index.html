@@ -54,13 +54,21 @@
 			<div class="submitInfo">
 				<div class="title">Fill in your contact information and requirements so that we can contact you!</div>
 				<form action="/submit" method="post">
-					<input type="text" name="name" placeholder="Please input your full name." />
-					<input type="text" name="mail" placeholder="Please input your email." />
-					<textarea rows="5" cols="50" name="demand" placeholder="Please input your demand."></textarea>
-					<button type="submit">submit!</button>
+					<div class="name">
+						<div class="text">name</div>
+						<input type="text" name="name" placeholder="Please input your full name." />
+					</div>
+					<div class="email">
+						<div class="text">email</div>
+						<input type="text" name="mail" placeholder="Please input your email." />
+					</div>
+					<div class="demand">
+						<div class="text">demand</div>
+						<textarea rows="5" cols="50" name="demand" placeholder="Please input your demand."></textarea>
+					</div>
 				</form>
+				<div class="button">submit!</div>
 			</div>
-
 		</div>
 	</div>
 	<footer>
