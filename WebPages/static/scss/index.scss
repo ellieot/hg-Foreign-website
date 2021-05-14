@@ -59,10 +59,15 @@ header {
 		color: white;
 		user-select: none;
 
+		.underline {
+			border-bottom: white 5px solid;
+		}
+
 		li {
 			display: flex;
 			width: px2rem(350);
 			line-height: 100%;
+			box-sizing: border-box;
 			height: 7vh;
 			align-items: center;
 			justify-content: center;

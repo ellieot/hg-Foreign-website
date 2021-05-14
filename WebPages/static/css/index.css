@@ -52,10 +52,14 @@ header ul {
   color: white;
   user-select: none;
 }
+header ul .underline {
+  border-bottom: white 5px solid;
+}
 header ul li {
   display: flex;
   width: 7.2916666667rem;
   line-height: 100%;
+  box-sizing: border-box;
   height: 7vh;
   align-items: center;
   justify-content: center;

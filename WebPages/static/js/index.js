@@ -1,11 +1,16 @@
-let currentIndex = 0;
-let ableToScroll = true;
+let currentIndex = 0; //当前页面索引
+let ableToScroll = true; //当前是否允许滑动
+let menuBar = document.querySelector('header ul'); //上栏按钮
 
-//鼠标滚轮事件
-window.addEventListener('wheel', (e) => {
+/**
+ * 滑动页面
+ * @param {*} isMoveUp 是否向上滑动
+ * @param {*} coolDown 滑动冷却时间，单位毫秒
+ */
+function scrollPage(isMoveUp, coolDown) {
 	if (ableToScroll) {
 		let h = window.innerHeight;
-		if (e.deltaY > 0) {
+		if (!isMoveUp) {
 			if (currentIndex < 4) {
 				currentIndex++;
 			}
@@ -19,47 +24,61 @@ window.addEventListener('wheel', (e) => {
 			behavior: 'smooth'
 		});
 		ableToScroll = false;
+		for (let i = 0; i < menuBar.children.length; i++) {
+			menuBar.children[i].className = '';
+		}
+		if (window.innerWidth > 768 && currentIndex > 0) {
+			menuBar.children[currentIndex - 1].className = 'underline';
+		}
 		setTimeout(() => {
 			ableToScroll = true;
-		}, 500);
+		}, coolDown);
 	}
+}
+
+/**
+ * 直接定位至某页面
+ * @param {*} index 页面索引，0开头
+ * @param {*} coolDown 冷却时间，毫秒 
+ */
+function moveToPage(index, coolDown) {
+	if (ableToScroll) {
+		let h = window.innerHeight;
+		currentIndex = index;
+		window.scrollTo({
+			top: currentIndex * 0.93 * h,
+			behavior: 'smooth'
+		});
+		ableToScroll = false;
+		for (let i = 0; i < menuBar.children.length; i++) {
+			menuBar.children[i].className = '';
+		}
+		if (window.innerWidth > 768 && currentIndex > 0) {
+			menuBar.children[currentIndex - 1].className = 'underline';
+		}
+		setTimeout(() => {
+			ableToScroll = true;
+		}, coolDown);
+	}
+}
+
+//鼠标滚轮事件
+window.addEventListener('wheel', (e) => {
+	scrollPage(e.deltaY < 0, 500);
 });
 
-//上栏按钮
-let menuBar = document.querySelector('header ul');
+//上栏按钮事件
 for (let i = 0; i < menuBar.children.length; i++) {
 	menuBar.children[i].addEventListener('click', (e) => {
 		e.stopPropagation();
-		if (ableToScroll) {
-			let h = window.innerHeight;
-			currentIndex = i + 1;
-			window.scrollTo({
-				top: currentIndex * 0.93 * h,
-				behavior: 'smooth'
-			});
-			ableToScroll = false;
-			setTimeout(() => {
-				ableToScroll = true;
-			}, 200);
-		}
+		moveToPage(i + 1, 150);
 	});
 }
 
 //点击logo返回首页
 document.querySelector('header .logo').addEventListener('click', (e) => {
-	if (ableToScroll) {
-		currentIndex = 0;
-		window.scrollTo({
-			top: 0,
-			behavior: 'smooth'
-		});
-		ableToScroll = false;
-		setTimeout(() => {
-			ableToScroll = true;
-		}, 100);
-	}
+	moveToPage(0, 100);
 });
-
 
 if (window.innerWidth < 768) {
 	//手机端展开按钮
@@ -86,26 +105,7 @@ if (window.innerWidth < 768) {
 	});
 
 	document.querySelector('body').addEventListener('touchmove', (e) => {
-		if (ableToScroll) {
-			let h = window.innerHeight;
-			endY = e.targetTouches[0].pageY;
-			if (endY - startY < 0) {
-				if (currentIndex < 4) {
-					currentIndex++;
-				}
-			} else {
-				if (currentIndex > 0) {
-					currentIndex--;
-				}
-			}
-			window.scrollTo({
-				top: currentIndex * 0.93 * h,
-				behavior: 'smooth'
-			});
-			ableToScroll = false;
-			setTimeout(() => {
-				ableToScroll = true;
-			}, 500);
-		}
+		endY = e.targetTouches[0].pageY;
+		scrollPage(endY - startY > 0, 500);
 	});
 }
