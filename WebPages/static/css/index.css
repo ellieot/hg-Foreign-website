@@ -52,10 +52,14 @@ header ul {
   color: white;
   user-select: none;
 }
+header ul .underline {
+  border-bottom: white 5px solid;
+}
 header ul li {
   display: flex;
   width: 7.2916666667rem;
   line-height: 100%;
+  box-sizing: border-box;
   height: 7vh;
   align-items: center;
   justify-content: center;
@@ -125,7 +129,130 @@ header ul li:hover {
 .mainContent .contact {
   position: relative;
   height: 83vh;
-  background-color: #0ead00;
+  background-color: #8EC5FC;
+  background-image: linear-gradient(45deg, #8EC5FC 32%, #d8c3fc 100%);
+}
+.mainContent .contact .submitInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.mainContent .contact .submitInfo .title {
+  position: relative;
+  font-size: 1.6666666667rem;
+  text-align: center;
+  color: white;
+  text-shadow: black 1px 2px 1px;
+  margin-top: 6vh;
+}
+.mainContent .contact .submitInfo form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 50vh;
+  margin-top: 5vh;
+}
+.mainContent .contact .submitInfo form div .errorTip {
+  display: none;
+  font-size: 1rem;
+  color: red;
+}
+.mainContent .contact .submitInfo form input,
+.mainContent .contact .submitInfo form textarea {
+  position: relative;
+  width: 31.25rem;
+  height: 2.7083333333rem;
+  line-height: 2.7083333333rem;
+  outline: none;
+  border: rgba(255, 255, 255, 0.45) 1px solid;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.25);
+  transition: width 0.5s;
+}
+.mainContent .contact .submitInfo form input:hover,
+.mainContent .contact .submitInfo form textarea:hover {
+  background-color: rgba(255, 255, 255, 0.45);
+}
+.mainContent .contact .submitInfo form input:focus,
+.mainContent .contact .submitInfo form textarea:focus {
+  width: 36.4583333333rem;
+  background-color: white;
+  border-color: white;
+  border-width: 1.5px;
+  border-style: solid;
+}
+.mainContent .contact .submitInfo form input {
+  text-align: center;
+  font-size: 1.1666666667rem;
+}
+.mainContent .contact .submitInfo form textarea {
+  resize: none;
+  height: 8.75rem;
+  line-height: 1.3333333333rem;
+  font-size: 1rem;
+}
+.mainContent .contact .submitInfo form .code {
+  width: 31.25rem;
+}
+.mainContent .contact .submitInfo form .code .mainInput {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.mainContent .contact .submitInfo form .code .mainInput .showCode {
+  width: 4.1666666667rem;
+  height: 2.0833333333rem;
+  line-height: 2.0833333333rem;
+  font-size: 1.25rem;
+  text-decoration: line-through;
+  text-align: center;
+  background-color: #6a68ff;
+  color: white;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  user-select: none;
+}
+.mainContent .contact .submitInfo form .code .mainInput .showCode:hover {
+  cursor: pointer;
+}
+.mainContent .contact .submitInfo form .code .mainInput input {
+  width: 6.25rem;
+  height: 2.0833333333rem;
+  line-height: 2.0833333333rem;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  transition: width 0.5s;
+}
+.mainContent .contact .submitInfo form .code .mainInput input:focus {
+  width: 9.375rem;
+}
+.mainContent .contact .submitInfo .button {
+  position: relative;
+  top: 1vh;
+  line-height: 2.8125rem;
+  height: 2.8125rem;
+  width: 16.6666666667rem;
+  font-size: 1.2083333333rem;
+  background-color: #0093E9;
+  border-radius: 5px;
+  color: white;
+  text-align: center;
+  user-select: none;
+  text-shadow: black 1px 1px 2px;
+  transition: background-color 0.7s;
+}
+.mainContent .contact .submitInfo .button:hover {
+  background-color: #49bcff;
+  cursor: pointer;
+}
+.mainContent .contact .submitInfo .requestTip {
+  display: none;
+  position: relative;
+  top: 18px;
 }
 
 footer {
@@ -213,5 +340,85 @@ footer {
   }
   .mainContent .description .scrollTip .arrow {
     font-size: 0.6666666667rem;
+  }
+  .mainContent .contact .submitInfo .title {
+    margin-top: 2.5vh;
+    font-size: 1rem;
+  }
+  .mainContent .contact .submitInfo form {
+    position: relative;
+    display: flex;
+    height: 50vh;
+    margin-top: 3vh;
+  }
+  .mainContent .contact .submitInfo form div .errorTip {
+    font-size: 0.5833333333rem;
+    line-height: 0.5833333333rem;
+    color: red;
+  }
+  .mainContent .contact .submitInfo form input,
+.mainContent .contact .submitInfo form textarea {
+    width: 10.4166666667rem;
+    height: 1.5625rem;
+    line-height: 1.5625rem;
+  }
+  .mainContent .contact .submitInfo form input:focus,
+.mainContent .contact .submitInfo form textarea:focus {
+    width: 14.5833333333rem;
+  }
+  .mainContent .contact .submitInfo form input {
+    font-size: 1rem;
+  }
+  .mainContent .contact .submitInfo form textarea {
+    height: 7.5rem;
+    line-height: 1rem;
+    font-size: 0.75rem;
+  }
+  .mainContent .contact .submitInfo form .code {
+    position: relative;
+    width: 10.4166666667rem;
+    top: 6px;
+  }
+  .mainContent .contact .submitInfo form .code .mainInput {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .mainContent .contact .submitInfo form .code .mainInput .showCode {
+    width: 2.0833333333rem;
+    height: 1.25rem;
+    line-height: 1.25rem;
+    font-size: 0.75rem;
+    text-decoration: line-through;
+    text-align: center;
+    background-color: #6a68ff;
+    color: white;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  .mainContent .contact .submitInfo form .code .mainInput input {
+    width: 4.1666666667rem;
+    height: 1.25rem;
+    line-height: 1.25rem;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    transition: width 0.5s;
+  }
+  .mainContent .contact .submitInfo form .code .mainInput input:focus {
+    width: 6.25rem;
+  }
+  .mainContent .contact .submitInfo .button {
+    top: 24px;
+    line-height: 1.875rem;
+    height: 1.875rem;
+    width: 10.4166666667rem;
+    font-size: 1rem;
+  }
+  .mainContent .contact .submitInfo .button:active {
+    color: #0093E9;
+  }
+  .mainContent .contact .submitInfo .requestTip {
+    top: 24px;
+    font-size: 0.75rem;
   }
 }
